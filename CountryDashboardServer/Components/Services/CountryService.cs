@@ -64,7 +64,7 @@ namespace CountryDashboardServer.Components.Services
             var countries = dbContexts.Countries.ToList();
             var invalidResponse = new InvalidResponse();
             foreach (var country in countries)
-            {
+            {                
                 var uri = $"http://api.worldbank.org/v2/country/{country.IsoCode}?format=json";                
                 using (HttpResponseMessage response = await ApiHelper.client.GetAsync(uri))
                 {

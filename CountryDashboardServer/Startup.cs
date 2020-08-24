@@ -4,6 +4,7 @@ using System.Linq;
 using CountryDashboardServer.Components.Database;
 using CountryDashboardServer.Components.Services;
 using CountryDashboardServer.Interfaces;
+using CountryDashboardServer.Shared;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -21,6 +22,7 @@ namespace CountryDashboardServer
         {
             Configuration = configuration;
             connectionString = Configuration.GetConnectionString("CountryDashboard");
+            ApiHelper.InitializeClient();
         }
 
         public IConfiguration Configuration { get; }
